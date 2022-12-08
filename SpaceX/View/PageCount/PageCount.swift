@@ -14,8 +14,6 @@ struct PageCount: View {
     private let screen = UIScreen.main.bounds
 //    @EnvironmentObject var indexHelper: IndexHelper
     
-//    @State var page: Int = 0
-    
     var body: some View {
         VStack {
             HStack(spacing: 10) {
