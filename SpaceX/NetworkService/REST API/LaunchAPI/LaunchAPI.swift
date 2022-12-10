@@ -1,43 +1,43 @@
 //
-//  RocketAPI.swift
+//  LaunchAPI.swift
 //  SpaceX
 //
-//  Created by Sergey Vorobey on 06.12.2022.
+//  Created by Sergey Vorobey on 09.12.2022.
 //
 
 import Foundation
 
-protocol RocketAPIRepository: WebRepository {
-    func loadRockets(completion: @escaping ([Rocket]) -> Void)
+protocol LaunchAPIRepository: WebRepository {
+    func loadLaunches(completion: @escaping ([Launch]) -> Void)
 }
 
-struct RocketAPI: RocketAPIRepository {
+struct LaunchAPI: LaunchAPIRepository {
     var baseURL: String = "https://api.spacexdata.com/v4"
     
-    func loadRockets(completion: @escaping ([Rocket]) -> Void) {
-        call(endpoint: API.allRockets) { rockets in
+    func loadLaunches(completion: @escaping ([Launch]) -> Void) {
+        call(endpoint: API.allLaunches) { rockets in
             completion(rockets)
         }
     }
 }
 
 // MARK: - Endpoints
-extension RocketAPI {
+extension LaunchAPI {
     enum API {
-        case allRockets
+        case allLaunches
     }
 }
 
-extension RocketAPI.API: APICall {
+extension LaunchAPI.API: APICall {
     var path: String {
         switch self {
-        case .allRockets:
-            return "/rockets"
+        case .allLaunches:
+            return "/launches"
         }
     }
     var method: String {
         switch self {
-        case .allRockets:
+        case .allLaunches:
             return "GET"
         }
     }

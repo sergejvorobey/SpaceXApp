@@ -10,9 +10,9 @@ import SwiftUI
 struct PageCount: View {
     
     var viewModel: PageCountViewModel
-//    @State var currentIndex: Int = 0
+    @Binding var currentIndex: Int
+    
     private let screen = UIScreen.main.bounds
-//    @EnvironmentObject var indexHelper: IndexHelper
     
     var body: some View {
         VStack {
@@ -22,8 +22,8 @@ struct PageCount: View {
                     Circle()
                         .fill(.white)
                         .frame(width: 8, height: 8)
-                        .opacity(viewModel.page == index ? 1 : 0.3)
-                        .scaleEffect(viewModel.page == index ? 1.1 : 0.8)
+                        .opacity(currentIndex == index ? 1 : 0.3)
+                        .scaleEffect(currentIndex == index ? 1.1 : 0.8)
                 }
             }
         }
@@ -35,7 +35,7 @@ struct PageCount: View {
 struct PageCount_Previews: PreviewProvider {
     static var previews: some View {
         PageCount(viewModel: PageCountViewModel(
-            rockets: MockUtil.rocketsMock,
-            page: 0))
+            rockets: MockUtil.rocketsMock),
+                  currentIndex: .constant(0))
     }
 }

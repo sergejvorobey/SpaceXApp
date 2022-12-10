@@ -10,6 +10,8 @@ import SwiftUI
 struct RocketDetail: View {
     var viewModel: RocketDetailViewModel
     
+    @State private var isLaunchView = false
+    
     var body: some View {
         VStack(spacing: 16) {
             OneLineTwoText(text: "Первый запуск",
@@ -34,9 +36,9 @@ struct RocketDetail: View {
                     burnTimeSEC: viewModel.rocket.secondStage.burnTimeSEC ?? 0))
             
             Button {
-                debugPrint("See downloads")
+                isLaunchView.toggle()
             } label: {
-                Text("Посмотреть загрузки")
+                Text("Посмотреть запуски")
                     .frame(height: 28, alignment: .center)
                     .font(.headline.bold())
                     .padding()
@@ -46,6 +48,9 @@ struct RocketDetail: View {
             .background(Color(red: 0.129, green: 0.129, blue: 0.129))
             .cornerRadius(10)
             .padding(.bottom, 20)
+            .sheet(isPresented: $isLaunchView) {
+                LaunchView(viewModel: LaunchViewModel(rocket: viewModel.rocket))
+            }
         }
         .frame(width: UIScreen.main.bounds.width)
     }

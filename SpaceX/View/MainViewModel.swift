@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class MainViewModel: ObservableObject {
+class MainViewModel {
     @Published var rockets: [Rocket] = []
 
     init(rockets: [Rocket]) {
@@ -22,5 +22,3 @@ class MainViewModel: ObservableObject {
         }
     }
 }
-
-extension MainViewModel: IndexService {}

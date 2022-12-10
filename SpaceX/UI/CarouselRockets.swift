@@ -9,15 +9,14 @@ import Foundation
 import SwiftUI
 import UIKit
 
-
-struct Carousel: UIViewRepresentable {
+struct CarouselRockets: UIViewRepresentable {
     
     var with: CGFloat
     var height: CGFloat
     @Binding var page: Int
 
     var data: [Rocket]
-    
+            
     func makeUIView(context: Context) -> UIScrollView {
         
         // Scroll view content size
@@ -39,25 +38,22 @@ struct Carousel: UIViewRepresentable {
         return scrollView
     }
     
-    func updateUIView(_ uiView: UIScrollView, context: Context) {
-        
-    }
+    func updateUIView(_ uiView: UIScrollView, context: Context) {}
     
     func makeCoordinator() -> Coordinator {
-        return Carousel.Coordinator(parent: self)
+        return CarouselRockets.Coordinator(parent: self)
     }
     
-    class Coordinator: NSObject, UIScrollViewDelegate, IndexService {
-        var parent: Carousel
+    class Coordinator: NSObject, UIScrollViewDelegate {
+        var parent: CarouselRockets
         
-        init(parent: Carousel) {
+        init(parent: CarouselRockets) {
             self.parent = parent
         }
         
         func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
             let page = Int(scrollView.contentOffset.x / UIScreen.main.bounds.width)
             self.parent.page = page
-            indexManager.carouselIndex = page
         }
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 //class ScrollCoordinator: NSObject, UIScrollViewDelegate {
-//    var parent: Carousel
+//    var parent: CarouselRockets
 //    
 //    init(parent: Carousel) {
 //        self.parent = parent

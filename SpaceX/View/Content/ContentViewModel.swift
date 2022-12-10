@@ -10,7 +10,7 @@ import SwiftUI
 class ContentViewModel {
     
     @State var rockets: [Rocket]
-    
+   
     init(rockets: [Rocket]) {
         self.rockets = rockets
     }

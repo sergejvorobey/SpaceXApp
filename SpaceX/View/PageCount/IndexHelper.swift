@@ -7,26 +7,12 @@
 
 import SwiftUI
 
-//class IndexHelper: ObservableObject {
-//
-//    @Published var currentIndex: Int = 0
-//
-//    init(currentIndex: Int = 0) {
-//        self.currentIndex = currentIndex
+class CarouselSetting: ObservableObject {
+    @Published var index: Int = 0
+    
+//    init(index: Int) {
+//        self.index = index
 //    }
-//}
-
-protocol IndexService {}
-
-extension IndexService {
-    var indexManager: IndexHelper {
-        return IndexHelper.shared
-    }
 }
 
-class IndexHelper {
-    
-    static let shared = IndexHelper()
-    
-    var carouselIndex: Int = 0
-}
+

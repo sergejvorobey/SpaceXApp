@@ -10,10 +10,8 @@ import SwiftUI
 class PageCountViewModel {
     
     @State var rockets: [Rocket]
-    @State var page: Int
-    
-    init(rockets: [Rocket], page: Int) {
+
+    init(rockets: [Rocket]) {
         self.rockets = rockets
-        self.page = page
     }
 }

@@ -15,8 +15,6 @@ struct ContentView: View {
     
     @State var page = 0
     
-//    @EnvironmentObject var indexHelper: IndexHelper
-    
     var body: some View {
         VStack {
             HStack {
@@ -57,10 +55,10 @@ struct ContentView: View {
             }
             
             GeometryReader { reader in
-                Carousel(with: screen.width,
-                         height: reader.frame(in: .global).height,
-                         page: $page,
-                         data: viewModel.rockets)
+                CarouselRockets(with: screen.width,
+                                height: reader.frame(in: .global).height,
+                                page: $page,
+                                data: viewModel.rockets)
             }
         }
         .background(Color.black)
