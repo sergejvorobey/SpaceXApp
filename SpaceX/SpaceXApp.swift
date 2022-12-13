@@ -11,7 +11,11 @@ import SwiftUI
 struct SpaceXApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView(viewModel: MainViewModel(rockets: MockUtil.rocketsMock))
+            NavigationView {
+                MainView(viewModel: MainViewModel(rockets: MockUtil.rocketsMock))
+            }
+            .ignoresSafeArea()
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 }

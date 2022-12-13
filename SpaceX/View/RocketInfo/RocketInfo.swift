@@ -14,7 +14,7 @@ struct RocketInfo: View {
     var body: some View {
         VStack(spacing: 4) {
             Text(viewoModel.value)
-                .font(.title2).bold()
+                .font(.title3).bold()
                 .foregroundColor(.white)
             Text(viewoModel.name)
                 .font(.caption)

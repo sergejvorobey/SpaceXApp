@@ -10,10 +10,12 @@ import Combine
 
 struct ContentView: View {
     
-    private let screen = UIScreen.main.bounds
     var viewModel: ContentViewModel
+    private let screen = UIScreen.main.bounds
+    private let rocketStorage = RocketStorage()
     
     @State var page = 0
+    @State var isShowingSetting: Bool = false
     
     var body: some View {
         VStack {
@@ -24,7 +26,7 @@ struct ContentView: View {
                 Spacer()
                 
                 Button {
-                    print("Setting button tapped!")
+                    isShowingSetting.toggle()
                 } label: {
                     Image("Setting")
                 }
@@ -32,23 +34,30 @@ struct ContentView: View {
             .padding(.horizontal, 32)
             .padding(.top, 42)
             .padding(.bottom, 32)
+            .sheet(isPresented: $isShowingSetting) {
+                SettingView()
+            }
             
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     let rocket = viewModel.getRocket(with: page)
                     let idLeo = rocket.payloadWeights.first { $0.id == "leo" }
+                    
                     RocketInfo(viewoModel: RocketInfoModel(
-                        name: "Высота, m",
-                        value: "\(rocket.height.meters ?? 0.0)"))
+                        name: "Высота, \(rocketStorage.getSavedValue(for: .RocketHeight))",
+                        value: viewModel.setRocketHeight(for: rocket)))
+                    
                     RocketInfo(viewoModel: RocketInfoModel(
-                        name: "Диаметр, m",
-                        value: "\(rocket.diameter.meters ?? 0.0)"))
+                        name: "Диаметр, \(rocketStorage.getSavedValue(for: .RocketDiameter))",
+                        value: viewModel.setRocketDiameter(for: rocket)))
+                    
                     RocketInfo(viewoModel: RocketInfoModel(
-                        name: "Масса, kg",
-                        value: "\(rocket.mass.kg)"))
+                        name: "Масса, \(rocketStorage.getSavedValue(for: .RocketWeight))",
+                        value: viewModel.setRocketWeight(for: rocket)))
+                    
                     RocketInfo(viewoModel: RocketInfoModel(
-                        name: "Нагрузка, kg",
-                        value: "\(idLeo?.kg ?? 0)"))
+                        name: "Нагрузка, \(rocketStorage.getSavedValue(for: .RocketPayload))",
+                        value: viewModel.setRocketPayload(for: idLeo)))
                 }
                 .padding(.horizontal, 32)
                 .padding(.bottom, 32)
@@ -63,7 +72,7 @@ struct ContentView: View {
         }
         .background(Color.black)
         .clipShape(CustomShape(corners: [.topLeft, .topRight], radius: 32))
-        .frame(height: 850)
+        .frame(height: 865)
     }
 }
 

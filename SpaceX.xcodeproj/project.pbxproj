@@ -43,6 +43,12 @@
 		C7F01E06294371D700FDBF32 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F01E05294371D700FDBF32 /* LaunchViewModel.swift */; };
 		C7F01E092943784900FDBF32 /* LaunchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F01E082943784900FDBF32 /* LaunchAPI.swift */; };
 		C7F01E0B294378CC00FDBF32 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F01E0A294378CC00FDBF32 /* Launch.swift */; };
+		C7F01E0D2947502600FDBF32 /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F01E0C2947502600FDBF32 /* NavigationBarModifier.swift */; };
+		C7F01E0F29475B7900FDBF32 /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F01E0E29475B7900FDBF32 /* DateUtil.swift */; };
+		C7F01E1129478CD800FDBF32 /* NumberUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F01E1029478CD800FDBF32 /* NumberUtil.swift */; };
+		C7F01E132948A7ED00FDBF32 /* StorageUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F01E122948A7ED00FDBF32 /* StorageUtil.swift */; };
+		C7F01E172948A90500FDBF32 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F01E162948A90500FDBF32 /* Unit.swift */; };
+		C7F01E1A2948C31500FDBF32 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F01E192948C31500FDBF32 /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +89,12 @@
 		C7F01E05294371D700FDBF32 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		C7F01E082943784900FDBF32 /* LaunchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAPI.swift; sourceTree = "<group>"; };
 		C7F01E0A294378CC00FDBF32 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		C7F01E0C2947502600FDBF32 /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		C7F01E0E29475B7900FDBF32 /* DateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
+		C7F01E1029478CD800FDBF32 /* NumberUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtil.swift; sourceTree = "<group>"; };
+		C7F01E122948A7ED00FDBF32 /* StorageUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageUtil.swift; sourceTree = "<group>"; };
+		C7F01E162948A90500FDBF32 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		C7F01E192948C31500FDBF32 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,11 +149,12 @@
 		C7391853293DEC5F00E2CA5B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C7F01E0229436F0E00FDBF32 /* Launch */,
-				C7ABFF0E293E1F3C00126BAB /* RocketDetail */,
 				C7391854293DF10800E2CA5B /* Content */,
-				C7ABFF09293E194100126BAB /* PageCount */,
+				C7ABFF0E293E1F3C00126BAB /* RocketDetail */,
 				C7391857293DF9AF00E2CA5B /* RocketInfo */,
+				C7ABFF09293E194100126BAB /* PageCount */,
+				C7F01E0229436F0E00FDBF32 /* Launch */,
+				C7F01E182948C2F900FDBF32 /* Setting */,
 				C7391847293DEC1D00E2CA5B /* MainView.swift */,
 				C766BF3D293F6C1D00CA0E6A /* MainViewModel.swift */,
 			);
@@ -203,6 +216,9 @@
 			isa = PBXGroup;
 			children = (
 				C766BF462940B07500CA0E6A /* MockUtil.swift */,
+				C7F01E122948A7ED00FDBF32 /* StorageUtil.swift */,
+				C7F01E0E29475B7900FDBF32 /* DateUtil.swift */,
+				C7F01E1029478CD800FDBF32 /* NumberUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -222,8 +238,7 @@
 			children = (
 				C7ABFF0F293E1F4B00126BAB /* RocketDetail.swift */,
 				C766BF482940B41200CA0E6A /* RocketDetailViewModel.swift */,
-				C74FAE27293E26E3004E8067 /* RocketStage.swift */,
-				C766BF4A2940B82600CA0E6A /* RocketStageViewModel.swift */,
+				C7F01E142948A8AB00FDBF32 /* RocketStage */,
 			);
 			path = RocketDetail;
 			sourceTree = "<group>";
@@ -245,6 +260,7 @@
 				C7ABFF15293E235700126BAB /* OneLineText.swift */,
 				C74FAE29293E2AEF004E8067 /* CustomShape.swift */,
 				C7F01E0029436C4F00FDBF32 /* PageControl.swift */,
+				C7F01E0C2947502600FDBF32 /* NavigationBarModifier.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -265,6 +281,32 @@
 				C7F01E0A294378CC00FDBF32 /* Launch.swift */,
 			);
 			path = LaunchAPI;
+			sourceTree = "<group>";
+		};
+		C7F01E142948A8AB00FDBF32 /* RocketStage */ = {
+			isa = PBXGroup;
+			children = (
+				C7F01E152948A8DE00FDBF32 /* Model */,
+				C74FAE27293E26E3004E8067 /* RocketStage.swift */,
+				C766BF4A2940B82600CA0E6A /* RocketStageViewModel.swift */,
+			);
+			path = RocketStage;
+			sourceTree = "<group>";
+		};
+		C7F01E152948A8DE00FDBF32 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C7F01E162948A90500FDBF32 /* Unit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C7F01E182948C2F900FDBF32 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C7F01E192948C31500FDBF32 /* SettingView.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7F01E172948A90500FDBF32 /* Unit.swift in Sources */,
 				C7F01E0429436F2D00FDBF32 /* LaunchView.swift in Sources */,
 				C7ABFF14293E21C200126BAB /* OneLineTwoText.swift in Sources */,
 				C7391848293DEC1D00E2CA5B /* MainView.swift in Sources */,
@@ -352,10 +395,12 @@
 				C766BF512940E71800CA0E6A /* CarouselRockets.swift in Sources */,
 				C766BF3C293F514B00CA0E6A /* URLSession.swift in Sources */,
 				C7391859293DF9C700E2CA5B /* RocketInfo.swift in Sources */,
+				C7F01E0D2947502600FDBF32 /* NavigationBarModifier.swift in Sources */,
 				C766BF4B2940B82600CA0E6A /* RocketStageViewModel.swift in Sources */,
 				C766BF34293F4CE900CA0E6A /* CancelBag.swift in Sources */,
 				C7F01DFD29410C8F00FDBF32 /* ScrollCoordinator.swift in Sources */,
 				C766BF3E293F6C1D00CA0E6A /* MainViewModel.swift in Sources */,
+				C7F01E1A2948C31500FDBF32 /* SettingView.swift in Sources */,
 				C766BF472940B07500CA0E6A /* MockUtil.swift in Sources */,
 				C7ABFF16293E235700126BAB /* OneLineText.swift in Sources */,
 				C766BF2C293F4BE100CA0E6A /* NetworkService.swift in Sources */,
@@ -363,12 +408,15 @@
 				C766BF442940AC0B00CA0E6A /* ContentViewModel.swift in Sources */,
 				C766BF4D2940D6B900CA0E6A /* PageCountViewModel.swift in Sources */,
 				C766BF2E293F4BFE00CA0E6A /* APICall.swift in Sources */,
+				C7F01E132948A7ED00FDBF32 /* StorageUtil.swift in Sources */,
 				C766BF492940B41200CA0E6A /* RocketDetailViewModel.swift in Sources */,
 				C766BF4F2940DE9700CA0E6A /* IndexHelper.swift in Sources */,
+				C7F01E1129478CD800FDBF32 /* NumberUtil.swift in Sources */,
 				C7F01E0129436C4F00FDBF32 /* PageControl.swift in Sources */,
 				C7F01E06294371D700FDBF32 /* LaunchViewModel.swift in Sources */,
 				C7F01DFF29420E2C00FDBF32 /* RocketInfoModel.swift in Sources */,
 				C766BF32293F4CB500CA0E6A /* Loadable.swift in Sources */,
+				C7F01E0F29475B7900FDBF32 /* DateUtil.swift in Sources */,
 				C766BF422940A97A00CA0E6A /* ContentCellViewModel.swift in Sources */,
 				C7F01E092943784900FDBF32 /* LaunchAPI.swift in Sources */,
 			);

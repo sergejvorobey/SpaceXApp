@@ -116,4 +116,12 @@ class MockUtil {
                company: "SpaceX",
                wikipedia: "https://en.wikipedia.org/wiki/Falcon_9",
                rocketDescription: "Falcon 9 is a two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport of satellites and the Dragon spacecraft into orbit.", id: "5e9d0d95eda69973a809d1ec")]
+    
+    static let launchesMock: [Launch] = [
+        Launch(id: "1", rocket: "5e9d0d95eda69955f709d1eb", name: "Rocket - 1", date: "2019-05-30T19:22:00.000Z", success: false),
+        Launch(id: "2", rocket: "5e9d0d95eda69955f709d1eb", name: "Rocket - 2", date: "2020-05-30T19:22:00.000Z", success: true),
+        Launch(id: "3", rocket: "5e9d0d95eda69955f709d1eb", name: "Rocket - 3", date: "2021-05-30T19:22:00.000Z", success: false),
+        Launch(id: "4", rocket: "5e9d0d95eda69955f709d1eb", name: "Rocket - 4", date: "2022-05-30T19:22:00.000Z", success: true),
+        Launch(id: "5", rocket: "5e9d0d95eda69955f709d1eb", name: "Rocket - 5", date: "2023-05-30T19:22:00.000Z", success: false)
+    ]
 }

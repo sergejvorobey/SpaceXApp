@@ -11,16 +11,22 @@ struct RocketStage: View {
     
     var viewModel: RocketStageViewModel
     
+    private let rocketStorage = RocketStorage()
+    
     var body: some View {
         VStack(spacing: 16) {
             OneLineText(text: viewModel.stageTitle)
             OneLineTwoText(text: "Количество двигателей",
                            value: "\(viewModel.engines)")
             OneLineTwoText(text: "Количество топлива",
-                           value: "\(viewModel.fuelAmountTons)")
+                           value: "\(viewModel.fuelAmountTons)",
+                           addintionallyIsActive: true,
+                           addintionallyText: rocketStorage.getSavedValue(for: .RocketFuelWeight))
             OneLineTwoText(text: "Время сгорания",
-                           value: "\(viewModel.burnTimeSEC)")
-                .padding(.bottom, 40)
+                           value: "\(viewModel.burnTimeSEC)",
+                           addintionallyIsActive: true,
+                           addintionallyText: rocketStorage.getSavedValue(for: .RocketBurnTime))
+            .padding(.bottom, 40)
         }
     }
 }

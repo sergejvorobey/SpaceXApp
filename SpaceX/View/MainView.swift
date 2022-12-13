@@ -33,12 +33,12 @@ struct MainView: View {
                 rockets: viewModel.rockets),
                       currentIndex: .constant(0))
             
-//            VStack {
-//                PageControl(page: .constant(0),//$carouselSetting.index,
-//                            data: viewModel.rockets)
-//            }
-//            .frame(width: screen.width, height: 75)
-//            .background(Color(red: 0.071, green: 0.071, blue: 0.071))
+            //            VStack {
+            //                PageControl(page: .constant(0),//$carouselSetting.index,
+            //                            data: viewModel.rockets)
+            //            }
+            //            .frame(width: screen.width, height: 75)
+            //            .background(Color(red: 0.071, green: 0.071, blue: 0.071))
         }
         .ignoresSafeArea(.container, edges: .vertical)
         .background(Color.black)
